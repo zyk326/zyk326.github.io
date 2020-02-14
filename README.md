@@ -18,3 +18,4 @@ Artficial&+n+b+s+p+; Intelligence&+n+b+s+p+; 人工智能。<br>
 sketch  &+n+b+s+p+;素描<br>
 知道眼睛，鼻子在哪，用到关键点检测<br>
 一张图片分为很多层次，信号层次，物体层次，场景层次，事件层次<br>
+maintion your position
