@@ -5,3 +5,16 @@ start here
   由于本人csgo接触不久，还有很多体会是不及许多老玩家的，这其中的利与弊也非常值得仔细推敲。
 回想4年，得与失均刻骨铭心。我将于2020年2月12日退出胜利与失败。心不念旧，即时寻安心。
                                                                                  ----2019.12.1 凌晨3点
+phd  哲学博士
+h-index  h指数，h代表高引用次数high citatiins,h-index代表至多h篇论文被引用了至少h次。
+长尾分布  元素r的某一幂次r(β)和g(r)的乘积渐进为一常数。
+face++ 旷世，专做计算机视觉，专做人脸识别。创业  专注
+surface 微软推出的二合一平板电脑
+visually sense视觉上的感觉
+human visual system 人类视觉系统
+computer visual计算机视觉
+On intelligence  讲大脑皮层
+Artficial Intelligence 人工智能。
+sketch  素描
+知道眼睛，鼻子在哪，用到关键点检测
+一张图片分为很多层次，信号层次，物体层次，场景层次，事件层次
