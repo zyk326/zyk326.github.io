@@ -9,7 +9,7 @@
 			function sun(a, b){
 				return a+b;
 			}
-			window.alert("111");
+			/*window.alert("111");*/
 		</script>
 		<input type = "button" value = "test" onclick = "window.alert(1, 2)"/><br><br>
 		<script type = "text/javascript" src = "C:\Users\Administrator\Desktop\doc.js"></script>
