@@ -29,7 +29,7 @@
 			<tr>
 				<td>7</td>
 				<td>8</td>
-				<td>9<audio src = ".\my_login_windw\bgm.mp3" controls = "controls"></audio></td>
+				<td>9<audio src = "my_login_windw/bgm.mp3" controls = "controls"></audio></td>
 			</tr><br><br>
 				
 		</table>
@@ -43,6 +43,6 @@
 		&nbsp;&nbsp;&nbsp;<input type = "checkbox" />man <br>
 
 		<!--vidio-->
-		<video src = ".\my_login_windw\test.mp4" controls = "controls"></video>
+		<video src = "my_login_windw/test.mp4" controls = "controls"></video>
 	</body>
 </html>
