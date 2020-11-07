@@ -39,7 +39,7 @@
 				<option>three</option>
 			</select><br><br>
 
-			<textarea rows = 5 cols = 50 name = "one" value = "no form"></textarea>
+			<textarea rows = 5 cols = 50 name = "one" value = "no form" placeholder = "no form"></textarea>
 		&nbsp;&nbsp;&nbsp;<input type = "checkbox" />man <br>
 
 		<!--vidio-->
