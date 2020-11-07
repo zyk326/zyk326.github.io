@@ -1,26 +1,48 @@
-# 项目的Markdown document
-+ 这是分段标记
----
-这是段落线  
-分段使用space * 2
-___
-表格的使用方式：  
-（采用左对齐，字段分行）  
-one | two | three 
-:---|:---:|---:
-这里采用左对齐|这里居中对齐|这里采用右对齐
-分行段落<br>d|不分行d|分了两行<br><br>d
--|-|-|
-+ 添加网址：
-[baidu][baiduurl]    
+﻿<!doctype html>
+<html>
+	<head>
+		<title>JavaScript</title>
+	</head>
 
-      添加的方式，宏定义
-+ 添加网址：
-[baudi](http://www.baidu.com "被动触发")
+	<body>
+		<script>
+			function sun(a, b){
+				return a+b;
+			}
+			window.alert("111");
+		</script>
+		<input type = "button" value = "test" onclick = "window.alert(1, 2)"/><br><br>
+		<script type = "text/javascript" src = "C:\Users\Administrator\Desktop\doc.js"></script>
 
-      不使用宏定义  
-添加图片：![join an photo][tupian1]
+		<!--table-->
+		<table border = "1px" width = "30%">
+			<tr >
+				<td colspan = 2 rowspan = 2>1</td>
+				<!--<td>2</td>-->
+				<td>3</td>
+			</tr>
+			<tr>
+				<!--<td>4</td>-->
+				<!--<td>5</td>-->
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9<audio src = "\my_login_window\bgm.mp3" controls = "controls"></audio></td>
+			</tr><br><br>
+				
+		</table>
+			<select name = "select_test">
+				<option>one</option>
+				<option selected>two</option>
+				<option>three</option>
+			</select><br><br>
 
+			<textarea rows = 5 cols = 50 name = "one"></textarea>
+		&nbsp;&nbsp;&nbsp;<input type = "checkbox" />man <br>
 
-[baiduurl]:http://www.baidu.com "被动触发"
-[tupian1]:https://c-ssl.duitang.com/uploads/item/202004/12/20200412153644_jhqkr.jpg
+		<!--vidio-->
+		<video src = "\my_login_window\test.mp4" controls = "controls"></video>
+	</body>
+</html>
