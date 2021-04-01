@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+/* 整体div  用来设置背景*/
+.bg-img{
+    background : url("../img/background.jpg");
+    /* 缩放100% */
+    height: 100vh;
+    /* 图片平铺 */
+    background-size: cover;
+    /* 图片居中 */
+    background-position: center;
+}
+/* 整体div后加入 用来设置背景图片定位 */
+.bg-img:after{
+    /* 设置定位 */
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* 设置背景透明 */
+    background: rgba(0, 0, 0, 0.7)
+}
+/* 整体div  用来设置form定位*/
+.content{
+    /* 设置定位 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* background-color: red; */
+    /* 设置位置偏移 */
+    transform: translate(-50%, -50%);
+    /* 设置元素居中 */
+    text-align: center;
+    /* 设置元素堆叠顺序 */
+    z-index: 999;
+    width: 370px;
+    text-align: center;
+    /* 元素内边距 */
+    padding: 60px 32px;
+    /* div背景 */
+    background : rgba(255, 255, 255, 0.04);
+    /* 设置div阴影 */
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.7);
+    transition: all .3s;
+    
+}
+
+.content:hover{
+    background : rgba(255, 255, 255, 0.1);
+}
+/* 
+.ani{
+    animation: ani 1s forwards;
+}
+
+@keyframes ani {
+    0%{
+    background : rgba(255, 255, 255, 0.04);
+    }
+    100%{
+    background : rgba(255, 255, 255, 0.1);
+    }
+} */
+
+/* Login form */
+.content header{
+    color: white;
+    font-size: 33px;   
+    /* 页边距 */
+    margin: 0px 0px 35px 0px;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+}
+/* 所有输入框 所属的div*/
+.field{
+    position: relative;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.94);
+}
+.field span{
+    color: #222;
+    width: 40px;
+    line-height: 45px;
+}
+.field input{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #222;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all .3s;
+}
+/* 显示密码span */
+.show{
+    position: absolute;
+    right: 13px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+    cursor: pointer;
+    display: none;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+}
+/* password验证show password被堵塞才显示show */
+.password:valid ~ .show{
+    display: block;
+}
+.space{
+    margin-top: 16px;
+}
+/* 忘记密码链接 */
+.pass{
+    text-align: left;
+    margin: 10px 0;
+}
+.pass a{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+/* 选择鼠标悬浮在其上的属性 */
+.pass:hover a{
+    text-decoration: underline;
+}
+/* 设置submit按钮 */
+input[type = "submit"]{
+    background: #3498db;
+    border: 1px solid #2691d9;
+    color: white;
+    font-size: 18px;
+    /* 设置字间距 */
+    letter-spacing: 1px;
+    /* 设置字体粗细 */
+    font-weight: 600;
+    /* 鼠标指针光标样式 */
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+input[type = "submit"]:hover{
+    background: #1f71a8;
+}
+input[type = "submit"]:active{
+    background: #124161;
+}
+.login{
+    color:white;
+    margin : 20px 0px;
+    font-family: 'Poppins', sans-serif;
+}
+.login:hover{
+    user-select: none;
+}
+.link{
+    /* 设置不再自动换行 */
+    display: flex;
+    cursor: pointer;
+    color: white;
+    margin: 0 0 20px 0;
+}
+.facebook, .instagram{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.facebook{
+    /* margin-left: 0px; */
+    background: #4267B2;
+    border: 1px solid #3e61a8;
+    transition: all .3s;
+
+}
+.facebook:hover{
+    background: #2a416e;
+    border: 1px solid #2a416e;  
+}
+.instagram{
+    background: #E1306C;
+    border: 1px solid #df2060;
+    transition: all .3s;
+}
+.instagram:hover{
+    background: #a82551;
+    border: 1px solid #a82551;
+}
+/* 设置faceboo和instagram字体 */
+.link i{
+    font-size: 17px;
+}
+/* 设置文字属性 */
+.link span{
+    font-size: 16px;
+    margin-left: 8px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+/* 注册行 */
+.signup{
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+/* 注册链接 */
+.signup a{
+    color: #3498db;
+    text-decoration: none;
+}
+/* 注册链接悬停 */
+.signup a:hover{
+    text-decoration: underline;
+}
