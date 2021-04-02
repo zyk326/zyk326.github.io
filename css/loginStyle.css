@@ -76,6 +76,7 @@
     font-family: 'Montserrat', sans-serif;
     user-select: none;
 }
+
 /* 所有输入框 所属的div*/
 .field{
     position: relative;
@@ -100,6 +101,15 @@
     font-family: 'Poppins', sans-serif;
     transition: all .3s;
 }
+/* 检查用户名 */
+#check {
+    position: absolute;
+    right: 0px;
+    color: #2c9fd4;
+    cursor: default;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+}
 /* 显示密码span */
 .show{
     position: absolute;
@@ -111,6 +121,10 @@
     display: none;
     font-family: 'Montserrat', sans-serif;
     user-select: none;
+}
+.password{
+    user-select: none;
+    
 }
 /* password验证show password被堵塞才显示show */
 .password:valid ~ .show{
@@ -174,13 +188,19 @@ input[type = "submit"]:active{
     line-height: 45px;
     margin-top: 10px;
     margin-left: 10px;
+
 }
 .facebook{
     /* margin-left: 0px; */
     background: #4267B2;
     border: 1px solid #3e61a8;
     transition: all .3s;
-
+}
+/* 设置快捷登录超链接 */
+.facebook a, .instagram a{
+    color: white;
+    text-decoration: none;
+    user-select: none;
 }
 .facebook:hover{
     background: #2a416e;

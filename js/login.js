@@ -2,19 +2,27 @@ let app = new Vue({
     el: '.content',
     data: {
         // 各项placeholder
-        username : 'Email or Phone',
-        password : 'PassWord',
-        visibleInfo : 'Show',
+        username: 'Email or Phone',
+        password: 'PassWord',
+        visibleInfo: 'Show',
         //密码input type属性
-        wordtype : 'password',
-        isClass : '',
-        comPhone : false,
-        comEmail : false,
-        comCode : false,
-        User : '',
-        Code : '',
+        wordtype: 'password',
+        isClass: '',
+        comPhone: false,
+        comEmail: false,
+        comCode: false,
+        User: '',
+        Code: '',
+        userTitle: '请在此输入',
+        pwdTitle: '密码包含 数字,英文,字符中的两种以上，长度6-20',
+        isstyle : 'display:none',
         // 登录成功跳转地址
-        loginFormUrl : ''
+        loginFormUrl: '',
+        //忘记密码跳转
+        forgetPwd :'#',
+        facebookint : '#',
+        insatgramint : '#',
+        signupint : '#'
     },
     methods: {
         // 用户名input获得焦点
@@ -28,21 +36,26 @@ let app = new Vue({
             let regEmail = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
             this.testPhone(regPhone);
             this.testEmail(regEmail);
+            if(this.comEmail||this.comPhone){
+                this.isstyle = 'display:block'
+            }else{
+                this.isstyle = 'display:none'
+            }
         },
         //验证是否正手机号
-        testPhone:function(reg){
-            if(reg.test(this.User)){
-                this.comPhone = true 
-            }else{
-               this.comPhone = false 
+        testPhone: function (reg) {
+            if (reg.test(this.User)) {
+                this.comPhone = true
+            } else {
+                this.comPhone = false
             }
         },
         //验证是否正Email
-        testEmail:function(reg){
-            if(reg.test(this.User)){
-                this.comEmail = true 
-            }else{
-               this.comEmail = false 
+        testEmail: function (reg) {
+            if (reg.test(this.User)) {
+                this.comEmail = true
+            } else {
+                this.comEmail = false
             }
         },
         //密码input获得焦点
@@ -56,24 +69,29 @@ let app = new Vue({
             let regCode = /^(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)(?!([^(0-9a-zA-Z)])+$).{6,20}$/;
             this.testPwd(regCode);
         },
-        testPwd : function(reg){
-            if(reg.test(this.Code)){
+        testPwd: function (reg) {
+            if (reg.test(this.Code)) {
                 this.comCode = true
-            }else{
+            } else {
                 this.comCode = false
             }
         },
         //login按钮逻辑判断通过
-        submitThis:function(){
+        submitThis: function () {
             console.log('手机号？' + this.comPhone)
             console.log('邮箱？' + this.comEmail)
             console.log('密码？' + this.comCode)
-            if((this.comPhone||this.comEmail)&&this.comCode){
+            if ((this.comPhone || this.comEmail) && this.comCode) {
                 console.log("yes")
                 this.loginFormUrl = 'https://www.baidu.com'
-            }else{
+            } else {
                 console.log('no')
                 this.loginFormUrl = '#'
+                // if (!this.comPhone && !this.comEmail) {
+                //     alert('请输入正确的电话或者邮箱')
+                // } else {
+                //     alert('密码包含 数字,英文,字符中的两种以上，长度6-20')
+                // }
             }
         },
         //密码input显示与隐藏

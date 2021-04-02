@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,49 +9,62 @@
 
     <!-- 导入库 -->
     <!-- <link href = "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = 'stylesheet'/> -->
-    <link rel = 'stylesheet' href = '../lib/font-awesome-4.7.0/css/font-awesome.min.css'/>
-    <link rel = 'stylesheet' href = '../css/loginStyle.css'/>
+    <link rel='stylesheet' href='../lib/font-awesome-4.7.0/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='../css/loginStyle.css' />
 
 </head>
+
 <body>
-    <div class = 'bg-img'>
-        <div class = 'content' 
-        :class="isClass">
-            <header class = 'basicTextInfo'>Login Form</header>
+    <div class='bg-img'>
+        <div class='content' :class="isClass">
+            <header class='basicTextInfo'>Login Form</header>
             <form :action="loginFormUrl">
-                <div class = 'field'>
+
+                <div class='field'>
                     <span class="fa fa-user"></span>
                     <!-- required属性表示submit时此字段不可为空 -->
-                    <input type="text" maxlength="320" v-model:value="User" @focus="focusUser" @blur="blurUser" required :placeholder="username">
+                    <input type="text" maxlength="320" v-model:value="User" @focus="focusUser" @blur="blurUser" required
+                        :title="userTitle" :placeholder="username">
+                    <span id='check' :style="isstyle">
+                        <span class='fa fa-check-circle'></span>
+                    </span>
                 </div>
-                <div class = 'field space'>
+
+
+                <div class='field space'>
                     <span class="fa fa-lock"></span>
-                    <input v-bind:type="wordtype" @focus="focusPwd" v-model:value="Code" @blur="blurPwd"  class = 'password' required :placeholder="password">
+                    <input v-bind:type="wordtype" @focus="focusPwd" :title='pwdTitle' v-model:value="Code"
+                        @blur="blurPwd" class='password'  required :placeholder="password">
                     <span class="show" @click="show"> {{visibleInfo}} </span>
                 </div>
+
                 <div class="pass">
-                    <a href="#">Forgot Password?</a>
+                    <a :href="forgetPwd">Forgot Password?</a>
                 </div>
-                <div class = 'field'>
+                <div class='field'>
                     <input type="submit" @click="submitThis" value="login">
                 </div>
                 <div class="login"> Or Login With</div>
                 <div class="link">
                     <div class="facebook">
-                        <i class = 'fa fa-facebook'><span>facebook</span></i>
+                        <a :href="facebookint">
+                            <i class='fa fa-facebook'>
+                            <span>Facebook</span></i></a>
                     </div>
-                    <div class="instagram">
-                        <i class = 'fa fa-instagram'><span>Insatgram</span></i>
+                    <div class="instagram"><a :href='insatgramint'>
+                        <i class='fa fa-instagram'>
+                            <span>Insatgram</span></i></a>
                     </div>
                 </div>
                 <div class="signup">Don't have account?
-                    <a href = "#">Sign up</a>
+                    <a :href="signupint">Sign up</a>
                 </div>
             </form>
         </div>
     </div>
-    <script src = 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
 
-    <script type = 'text/javascript' src = '../js/login.js'></script>
+    <script type='text/javascript' src='../js/login.js'></script>
 </body>
+
 </html>
