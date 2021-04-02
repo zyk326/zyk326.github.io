@@ -49,7 +49,6 @@
     transition: all .3s;
     
 }
-
 .content:hover{
     background : rgba(255, 255, 255, 0.1);
 }
@@ -126,7 +125,7 @@
     user-select: none;
     
 }
-/* password验证show password被堵塞才显示show */
+/* password验证show password输入有效才显示show */
 .password:valid ~ .show{
     display: block;
 }

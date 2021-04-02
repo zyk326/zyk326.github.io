@@ -22,7 +22,7 @@ let app = new Vue({
         forgetPwd :'#',
         facebookint : '#',
         insatgramint : '#',
-        signupint : '#'
+        signupint : './signup.html'
     },
     methods: {
         // 用户名input获得焦点
