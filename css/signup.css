@@ -1,35 +1,140 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@700&display=swap'); */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 .bg-img{
-    /* background: url('../img/signupbackground.jpg'); */
     height: 100vh;
-    background-size: cover;
-    background-position: center;
 }
 .bg-img::after{
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* position: absolute; */
     content: '';
-    /* 不设置高 宽没有亮度 */
+    left: 0;
+    top: 0;
+    width: 100%;
     height: 100%;
-    width: 100%;
-    /* background:rgba(0, 0, 0, 0.3) */
+
 }
-.position{
+.forehead{
     position: absolute;
-    width: 100%;
-    height: 7%;
     background-color: #24292e;
-    /* 不拿到前面来没有效果 */
-    z-index: 999;
+    width: 100%;
+    height: 72px;
+    user-select: none;
+}
+.forehead a {
+    position: relative;
+    left: 17%;
+    top: 16px;
 }
 
-.head a{
+.content{
     position: absolute;
-    top: 12px;
-    left: 15px;
+    top: 270px;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 880px;
+    /* 页面内边距 */
+    padding: 60px 32px;
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: white;
+    margin: 0 0 32px 0;
+    top: 40px;
+    user-select: none;
+}
+.header p{
+    color: rgba(106, 115, 125);
+    margin: 50px 0 1px 0;
+    font-weight: 400;
+    letter-spacing:1px;
+}
+.header header{
+    color: black ;
+    font-size: 48px;
+    font-weight: 1px;
+    margin-top: 8px;
+}
+.main{
+    position: relative;
+    text-align: left;
+    left: 150px;
+    top: 70px;
+}
+.field{
+    /* 上右下左 */
+    margin: 0 0 20px 0 ;
+}
+.space{
+    margin:  0px 0 0 0 ;
+}
+.field dt{
+    color: #24292e;
+    font-size: 12px;
+    font-weight: 500;
+    height: 25px;
+}
+.prompt span{
+    color: #cb2431;
+    user-select: none;
+}
+.enter{
+    width: 50%;
+    height: 29px;
+    /* margin-bottom: 25px; */
+    border-radius: 5px;
+    background-color: #fafbfc;
+    border: 1px solid #ccc;
+    /* border: none; */
+    outline-style: none;
+    margin-right: 10px;
+    /* 缩进 */
+    text-indent: 10px;
+}
+.enter:hover{
+    background: rgba(176, 178, 179, 0.9);
+}
+.line span{
+    line-height: 20px;
+    width: 20px;
+    color: black;
+    user-select: none;
+}
+.note{
+    margin:  -100px 0px 0 0 ;
+    color: #586069;
+    font-size: 10px;
+}
+.note a{
+    text-decoration: none;
+}
+.note a:hover{
+    text-decoration: underline;
+}
+input[type='submit']{
+    position: relative;
+    width: 61%;
+    height: 50px;
+    border-radius: 7px;
+    border: none;
+    margin: 20px 0 0 0 ;
+    background-color: #6899e2;
+    outline-style: none;
+    transition: all .2s;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    /* letter-spacing: 1px; */
+}
+input[type='submit']:hover{
+    background-color: #3076df;
+    cursor: pointer;
+}
+input[type='submit']:active{
+    background-color: #1860cc;
 }

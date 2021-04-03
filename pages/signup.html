@@ -9,24 +9,65 @@
 
     <!-- 导库 -->
     <link rel='stylesheet' href='../lib/font-awesome-4.7.0/css/font-awesome.min.css' />
-    <link rel = 'stylesheet' href = '../css/signup.css' />
-
+    <link rel='stylesheet' href='../css/signup.css' />
 </head>
 
 <body>
-    <div class = 'bg-img'>
-        <div class="position">
-            <div class='head'>
-                <a href='../index.html'><img src='../img/logo.png' /></a>
-                
-            </div>
+    <div class='bg-img'>
+        <div class="forehead">
+            <a href='../index.html'><span><img src='../img/logo.png' /></span></a>
         </div>
-
 
         <div class="content">
+            <div class="header">
+                <p class='title'>join us</p>
+                <header class='basicInfo'>Create your account</header>
+            </div>
+            <div class='main'>
+                <form :action="signsuc" class='infom'>
+                    <dl class='field'>
+                        <dt class='prompt'>Username<span>&nbsp;*</span></dt>
+                        <dd class='line'>
+                            <span class='fa fa-user'></span>
+                            <input class='enter' type='text' required :placeholder="username" title="4到16位（字母，数字，下划线，减号）" @blur='userBlur' @focus='userFocus' v-model:value='valueUser' />
+                            <span v-show="isstyleUser" class='fa fa-check-circle' ></span>
+                            <span style="color: red;" v-show='unisstyleUser' class="fa fa-exclamation-circle"></span>
+                        </dd>
+                    </dl>
 
+                    <dl class='field'>
+                        <dt class='prompt'>Emial address<span>&nbsp;*</span></dt>
+                        <dd class='line'>
+                            <span class='fa fa-envelope'></span>
+                            <input class='enter' type='text' required v-model:value='valueEmail' maxlength="320"
+                                @blur='emailBlur' @focus='emailFocus'/>
+                            <span v-show='isstyleEmail' class='fa fa-check-circle' ></span>
+                            <span style="color: red;" v-show='unisstyleEmail' class="fa fa-exclamation-circle"></span>
+                        </dd>
+                    </dl>
+
+                    <dl class='field space'>
+                        <dt class='prompt'>Password<span>&nbsp;*</span></dt>
+                        <dd class='line'>
+                            <span class='fa fa-lock'></span>
+                            <input class='enter' type='password' required v-model:value='valuePwd' @blur='pwdBlur' @focus='pwdFocus'
+                                title="密码包含 数字,英文,字符中的两种以上，长度6-20" />
+                            <span class='fa fa-check-circle' v-show='isstylePwd'></span>
+                            <span style="color: red;" class="fa fa-exclamation-circle" v-show='unisstylePwd'></span>
+                        </dd>
+                    </dl>
+                    <span class='note'>Make sure it's at least 8 characters including a number and a lowercase
+                        letter.&nbsp;<a href='#'>Learn more.</a></span>
+                    <dl>
+                        <input type='submit' value='Create account' @click='submit' />
+                    </dl>
+                </form>
+            </div>
         </div>
     </div>
+
+    <script src='../lib/vue/vue.js'></script>
+    <script type='text/javascript' src='../js/signup.js'></script>
 </body>
 
 </html>

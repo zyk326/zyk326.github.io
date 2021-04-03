@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css?family=MGT') */
 *{
     margin: 0;
     padding : 0;
@@ -39,15 +40,13 @@
     /* 设置元素堆叠顺序 */
     z-index: 999;
     width: 370px;
-    text-align: center;
     /* 元素内边距 */
     padding: 60px 32px;
     /* div背景 */
     background : rgba(255, 255, 255, 0.04);
     /* 设置div阴影 */
     box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.7);
-    transition: all .3s;
-    
+    transition: all .3s; 
 }
 .content:hover{
     background : rgba(255, 255, 255, 0.1);
@@ -92,6 +91,7 @@
 .field input{
     height: 100%;
     width: 100%;
+    /* 背景透明 */
     background: transparent;
     border: none;
     outline: none;
