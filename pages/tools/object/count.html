@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = '../vue.js'></script>
+    <!-- <script src = 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script> -->
+    <!-- <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+<body>
+    <div id = 'count'>
+        <input type = 'button' value = '-' @click = 'sub'/>
+        <span> {{ num }} </span>
+        <input type = 'button' value = '+' @click = 'add'/>
+    </div>
+    <script>
+        var count = new Vue({
+            el : '#count',
+            data : {
+                num : 0
+            },
+            methods : {
+                add : function(){
+                    if(this.num < 10){
+                        this.num++   
+                    }
+                    console.log('add')
+                },
+                sub : function(){
+                    if(this.num > 0){
+                        this.num--
+                    }
+                    console.log('sub')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

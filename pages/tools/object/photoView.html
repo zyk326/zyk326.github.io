@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src ='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+
+    <style>
+        body{
+            border: 0px;
+        }
+        #photoView span{
+            /* position: absolute; */
+            /* background-color: red; */
+            width: 200px;
+            height: 200px;
+        }
+        #photoView div{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id = 'photoView'>
+        <span>
+            <img src = '../img/blank.png' v-if ='index==0' style="width: 200px;"/>
+        </span>
+        <span>
+            <a href = 'javascript:void(0)' v-on:click = 'sub' v-show="index!=0" >
+                <img v-bind:src = 'left_arrow' />
+            </a>
+        </span>   
+        <img width="500px" v-bind:src = 'imgs[index]' />
+        <span>
+            <a href = 'javascript:void(0)' v-on:click = 'prev' v-show = 'index!=imgs.length-1'>
+                <img v-bind:src = 'right_arrow'/>
+            </a>
+        </span>
+    </div>
+    <script>
+        var photoView = new Vue({
+            el : '#photoView',
+            data : {
+                imgs : ['../img/lickAHuman.jpg',
+                        '../img/notRealButTure.jpg',
+                        '../img/universeInTheEyes.jpg'],
+                index : 0,
+                left_arrow : '../img/left arrow.png',
+                right_arrow : '../img/right arrow.png'
+            },
+            methods : {
+                prev : function(){
+                    this.index++
+                },
+                sub : function(){
+                    this.index--
+                }
+            }
+        })
+    </script>
+</body>
+</html>

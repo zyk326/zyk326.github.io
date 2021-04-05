@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+    <link rel='stylesheet' href='../css/notebook.css'></link>
+
+</head>
+
+<body>
+    <div class="notebook">
+        <div class="content">
+            <div class='header'>
+                <span>Note Book</span>
+            </div>
+            <div class='padcon'>
+                <div class='field'>
+                    <input type='input' @keyup.enter="submit" v-model:value='message'>
+                    <ul class="isLi">
+                        <li v-for="(value, key) in tagInfo" class = 'testLi' :data-index="key">{{key + 1}}. {{value}}
+                            <span class = 'hide' @click = 'thisDel(key)'>delete</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <span class='tagsNum'>{{tagInfo.length}} item left</span>
+                    <span class='clear'><button @click = 'clearAll'>Clear</button></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='../js/notebook.js'></script>
+</body>
+
+</html>

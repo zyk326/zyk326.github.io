@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>localmusicSystem</title>
-
+    <link rel='stylesheet' href='./css/index.css' />
 </head>
+
 <body>
-    
+
     <!-- <div class = 'mainPage'>
         <div class = 'header'>
             <h1 class = 'logo'>
@@ -27,29 +29,40 @@
     <div class = 'sliderWrap'></div>
     <div class = 'downloadBlur'></div>
     <div class = 'download'></div> -->
-    <div>
-        <a href = './pages/login.html'>
-            <img src = './img/logo.png'/>
-        </a>
-    </div>
-    <hr>
-    <div class="bg-img">
-        <div class="content">
-            <div class="updataLog">
-                <ul>
-                    <li>
-                        2021/04/02<br>
-                        <b>添加index.html，添加‘登录页面’，将项目部署到github上。</b>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        2021/04/03  <br>
-                        <b>添加了‘注册页面’，优化移动端显示。</b>
-                    </li>
-                </ul>
+
+
+    <div class="index">
+        <div class='header'>
+            <a href='./pages/login.html' class='logo'>
+                <img src='./img/logo.png' />
+            </a>
+        </div>
+        <div class='content'>
+            <div class="midcon">
+                <div class="updataLog">
+                    <h2>更新日志</h2><br>
+                    <ul>
+                        <li v-for='(value, key) in updataInfo'>
+                            {{value.date}}<br>{{value.tag}}<br>
+                        </li>
+                    </ul>
+                </div>
+                <span class='tools'>
+                    <h2>小工具</h2><br>
+                    <!-- <ul>
+                        <li v-for='(value, key) in toolsSrc' :data-img='value.img'>
+                            {{value}}
+                        </li>
+                    </ul> -->
+                    <a href="./pages/tools/object/count.html"><img src='./pages/tools/img/count.png' /></a>
+                    <a href="./pages/tools/object/notebook.html"><img src='./pages/tools/img/notebook.png' /></a>
+                    <a href="./pages/tools/object/photoView.html"><img src='./pages/tools/img/photoView.png' /></a>
+                </span>
             </div>
         </div>
     </div>
+    <script src='./lib/vue/vue.js'></script>
+    <script src='./js/index.js'></script>
 </body>
+
 </html>
