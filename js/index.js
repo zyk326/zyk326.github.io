@@ -13,6 +13,9 @@ let index = new Vue({
         },{
             date : '2021/04/05',
             tag : '添加小工具，index page简单排版。'
+        },{
+            data : '2021/04/06',
+            tag : '重排index.html结构。'
         }],
         toolsSrc : [{
             name : 'count',

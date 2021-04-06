@@ -33,33 +33,39 @@
 
     <div class="index">
         <div class='header'>
-            <a href='./pages/login.html' class='logo'>
-                <img src='./img/logo.png' />
-            </a>
+            <div class = 'ele'>
+                <a href='./pages/login.html' class='logo'>
+                    <img src='./img/logo.png' />
+                </a>
+            </div>
+
         </div>
-        <div class='content'>
-            <div class="midcon">
-                <div class="updataLog">
-                    <h2>更新日志</h2><br>
-                    <ul>
-                        <li v-for='(value, key) in updataInfo'>
-                            {{value.date}}<br>{{value.tag}}<br>
-                        </li>
-                    </ul>
-                </div>
-                <span class='tools'>
-                    <h2>小工具</h2><br>
-                    <!-- <ul>
+        <div class="bg-img">
+            <div class='content'>
+                <div class="midcon">
+                    <div class="updataLog">
+                        <h2>更新日志</h2><br>
+                        <ul>
+                            <li v-for='(value, key) in updataInfo'>
+                                {{value.date}}<br>{{value.tag}}<br>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class='tools'>
+                        <h2>小工具</h2><br>
+                        <!-- <ul>
                         <li v-for='(value, key) in toolsSrc' :data-img='value.img'>
                             {{value}}
                         </li>
                     </ul> -->
-                    <a href="./pages/tools/object/count.html"><img src='./pages/tools/img/count.png' /></a>
-                    <a href="./pages/tools/object/notebook.html"><img src='./pages/tools/img/notebook.png' /></a>
-                    <a href="./pages/tools/object/photoView.html"><img src='./pages/tools/img/photoView.png' /></a>
-                </span>
+                        <a href="./pages/tools/object/count.html"><img src='./pages/tools/img/count.png' /></a>
+                        <a href="./pages/tools/object/notebook.html"><img src='./pages/tools/img/notebook.png' /></a>
+                        <a href="./pages/tools/object/photoView.html"><img src='./pages/tools/img/photoView.png' /></a>
+                    </span>
+                </div>
             </div>
         </div>
+
     </div>
     <script src='./lib/vue/vue.js'></script>
     <script src='./js/index.js'></script>
