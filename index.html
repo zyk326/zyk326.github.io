@@ -11,60 +11,58 @@
 
 <body>
 
-    <!-- <div class = 'mainPage'>
-        <div class = 'header'>
-            <h1 class = 'logo'>
-                <a href = ''>
-                    <img src = './img/logo.png'/>
-                </a>
-            </h1>
-            <div class = 'search_warpper top_search'>
-                <div>
-                    <input type = 'text'/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class = 'navWrap'></div>
-    <div class = 'sliderWrap'></div>
-    <div class = 'downloadBlur'></div>
-    <div class = 'download'></div> -->
-
-
     <div class="index">
         <div class='header'>
-            <div class = 'ele'>
-                <a href='./pages/login.html' class='logo'>
-                    <img src='./img/logo.png' />
-                </a>
-            </div>
-
-        </div>
-        <div class="bg-img">
-            <div class='content'>
-                <div class="midcon">
-                    <div class="updataLog">
-                        <h2>更新日志</h2><br>
-                        <ul>
-                            <li v-for='(value, key) in updataInfo'>
-                                {{value.date}}<br>{{value.tag}}<br>
-                            </li>
-                        </ul>
-                    </div>
-                    <span class='tools'>
-                        <h2>小工具</h2><br>
-                        <!-- <ul>
-                        <li v-for='(value, key) in toolsSrc' :data-img='value.img'>
-                            {{value}}
-                        </li>
-                    </ul> -->
-                        <a href="./pages/tools/object/count.html"><img src='./pages/tools/img/count.png' /></a>
-                        <a href="./pages/tools/object/notebook.html"><img src='./pages/tools/img/notebook.png' /></a>
-                        <a href="./pages/tools/object/photoView.html"><img src='./pages/tools/img/photoView.png' /></a>
-                    </span>
+            <div class='ele'>
+                <div class='navigation'>
+                    <a href='./pages/login.html' class='logo'>
+                        <img src='./img/logo.png' />
+                    </a>
                 </div>
             </div>
         </div>
+
+        <div class="bg-img">
+            <div class='content'>
+                <span class="updataLog">
+                    <h2>更新日志</h2><br>
+                    <ul>
+                        <li v-for='(value, key) in updataInfo'>
+                            {{value.date}}<br>{{value.tag}}<br>
+                        </li>
+                    </ul>
+                </span>
+
+                <span class='tools'>
+                    <div class='toolsview'>
+                        <h2>小工具</h2><br>
+                        <a href="./pages/tools/object/count.html"><img src='./pages/tools/img/count.png'
+                                title="计数器" /></a>
+                        <a href="./pages/tools/object/notebook.html"><img src='./pages/tools/img/notebook.png'
+                                title="记事本" /></a>
+                        <a href="./pages/tools/object/photoView.html"><img src='./pages/tools/img/photoView.png'
+                                title="图片查看" /></a>
+                    </div>
+                </span>
+
+            </div>
+
+            <div class='links'>
+                <div class='linkspace'>
+                    <span class='linkinfo firstlink' @click="downloadPC">
+                        <img src="./img/pc.png" alt="">
+                        <a class='firsta' href="#">下载PC版</a></span>
+                    <span class='linkinfo secondlink' @click="downloadIPHONE">
+                        <img src="./img/apple.png" alt="">
+                        <a class='seconda' href="#">下载iPhone版</a></span>
+                    <span class='linkinfo lastlink' @click="downloadANDROID">
+                        <img src="./img/android.png" alt="">
+                        <a class='lasta' href="#">下载Android版</a></span>
+                </div>
+            </div>
+        </div>
+
+        <div class='mainframe'></div>
 
     </div>
     <script src='./lib/vue/vue.js'></script>
