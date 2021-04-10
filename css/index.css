@@ -3,10 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-.body{
-    /* background:url('../img/background.jpg');
+body{
+    background-color: rgb(233, 233, 233);
+    background: url('../img/background.jpg');
     height: 100%;
-    width: 100%; */
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .index{
     height: 100vh;
@@ -135,7 +139,7 @@
 .linkspace{
     margin: 0 auto;
     padding: 18px;
-    width: 745px;
+    width: 50%;
     /* background-color: red; */
     text-align: center;
     display: flex;
@@ -171,9 +175,16 @@
 }
 .mainframe{
     position:relative;
-    height: 1000px;
-    width: 1000px;
+    height: 10000px;
+    width: 50%;
     background-color: red;
     margin: 0 auto;
+}
+.mainfield{
+    position: relative;
+    width: 300px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: green;
 }
 
