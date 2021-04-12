@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <style>
+        img {
+            width: 300px;
+        }
+
+        .app {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(233, 233, 233, 0.7);
+        }
+
+        .content {
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 天气接口 -->
+    <!-- http://wthrcdn.etouch.cn/weather_mini -->
+    <div class='app'>
+        <div class='content'>
+            <div>
+                <img src='../img/天气.png' />
+            </div>
+            <div>
+                <input type="input" v-model:vlaue='target' @keyup.enter='getinfo' />
+                <input type="button" value='搜索' @click='getinfo' @keyup.enter='getinfo'>
+            </div>
+            <div>
+                <span @click='getinfoclick("石首")'>石首</span>
+                <span @click='getinfoclick("十堰")'>十堰</span>
+                <span @click='getinfoclick("荆州")'>荆州</span>
+                <span @click='getinfoclick("武汉")'>武汉</span>
+            </div>
+            <div class='weatherinfo'>
+                <div>
+                    <ul>
+                        {{target}}
+                        <li v-for='value in info'>
+                            日期：{{value.date}} <br>
+                            最高温:{{value.high}} <br>
+                            最低温:{{value.low}} <br>
+                            天气：{{value.type}} <br>
+                            风向:{{value.fengxiang}}
+                            <hr>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '.app',
+            data: {
+                url: 'http://wthrcdn.etouch.cn/weather_mini?city=',
+                target: '',
+                info: '',
+            },
+            methods: {
+                getinfo: function () {
+                    this.info = ''
+                    var that = this;
+                    console.log(that.target);
+                    axios.get(that.url + that.target)
+                        .then(function (response) {
+                            console.log(response.data.data.forecast)
+                            that.info = response.data.data.forecast
+                        }, function (err) {
+
+                        })
+                },
+                getinfoclick: function (e) {
+                    this.info = ''
+                    this.target = e
+                    var that = this;
+                    console.log(that.target);
+                    axios.get(that.url + e)
+                        .then(function (response) {
+                            console.log(response)
+                            that.info = response.data.data.forecast
+                        }, function (err) {
+
+                        })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
