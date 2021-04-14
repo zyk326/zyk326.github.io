@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='../css/musicPlayer.css' rel="stylesheet" />
+</head>
+
+<body>
+    <!-- 接口地址：https://autumnfish.cn/search -->
+    <div class="musicPlayer">
+        <div class="content">
+
+            <div class="header">
+                <img class="logo" src='../img/icon-music-note.png' />
+                <span class='entersearchinfo'>
+                    <input type='input' @keyup.enter="searchinfo" v-model:value="keyword" />
+                    <img src="../img/search.png" @click="searchinfo" />
+                </span>
+            </div>
+            <div class='main'>
+                <div class="songLi">
+                    <ul class='ul'>
+                        <li v-for="(value,key) in getinfoli">
+                            <span class='songfiled' @mouseover="overTitle(key)">
+                                <img src="../img/开始.png" alt="" class='song' data-index="key" @click='playmusic(key)'>
+                                <p :title="artist">{{value.name}}</p>
+                                <img src="../img/MV.png" alt="" class='mv' v-if="value.mvid!=0"
+                                    @click='playMv(value.mvid)'>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="field">
+                    <span class='fieldsong' :style="isstyle">
+                        <img :src="picture" alt="" class='tireimg' :class="isplay?'whetherplaying':''">
+                    </span>
+                </div>
+
+                <div class="hotComments">
+                    <p style="font-size: 20px ;position: relative; left: 30%; top: 5px; width: 100px;color: #333333;">
+                        热门留言
+                    </p>
+                    <ul class='commentPlace'>
+                        <li class='users' v-for='(value , key) in comInfo' data-index="key">
+                            <span class='userImg'><img :src="value.user.avatarUrl" alt=""></span>
+                            <span class='userInfo'>
+                                <p class='userId'>{{value.user.nickname}}</p>
+                                <p class='userCon'>{{value.content}}</p>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class='progressBar'>
+                <audio :src='musicurl' ref="audio" controls autoplay
+                    style="width: 100%; height: 100%; border-style: none; outline-style: none;" @play="play"
+                    @pause="pause" id = 'audio'></audio>
+            </div>
+        </div>
+        <!--  -->
+        <div class='mvfield' v-if="flagMv" @click='hideMv'>
+            <video controls="controls" :src="mvUrl" autoplay="autoplay"></video>
+        </div>
+    </div>
+
+
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <script src='../js/musicPlayer.js'></script>
+</body>
+
+</html>

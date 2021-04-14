@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒模型</title>
+    <style>
+        body {
+            background-image: url(../img/notRealButTure.jpg);
+            background-repeat: repeat-x;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            /* border: 5px solid rgba(255, 255, 255, 0.3); */
+        }
+
+        .first {
+            /* background-color: red; */
+            margin: 100px;
+            background-color: green;
+            background-image: url('../img/天气.png');
+            /* content: url(../img/photoView.png); */
+            border: 10px solid pink;
+        }
+
+        li {
+            background-color: rgba(231, 234, 237, 0.7);
+            list-style: outside;
+        }
+
+        .protent {
+            position: relative;
+            background-image: url(../img/universeInTheEyes.jpg);
+            height: 80vh;
+            margin-top: 60vh;
+            background-position: center;
+            background-repeat: repeat;
+            /* background-attachment: fixed; */
+            background-size: cover;
+        }
+
+        .thirdtent {
+            position: relative;
+            height: 100vh;
+            background-image: url(../img/lickAHuman.jpg);
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="content">
+            <div class="first">
+                <p>盒模型定义了四个区域 MBPC ： 边界margin（上右下左/上 右-左 下/上-下 右左） 边框border 填充padding 内容content</p>
+                <p>从底层到上层：margin - backgroundcolor - backgroundimg - content - border </p>
+            </div>
+
+            <div class="second"></div>
+        </div>
+        <div style="border: 1px solid red; ">
+            <ul>
+                <li> nihao这是一段随机敲打的文字，如果没有任何逻辑的话，请相信你的眼睛，不要拘泥于你的思维，跳脱出思维框架的束缚，让自己的思想自由地在宇宙中遨游 </li>
+            </ul>
+        </div>
+        <div class="protent"></div>
+        <div class='thirdtent'></div>
+    </div>
+</body>
+
+</html>
