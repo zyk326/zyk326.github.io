@@ -59,12 +59,14 @@
             <div class='progressBar'>
                 <audio :src='musicurl' ref="audio" controls autoplay
                     style="width: 100%; height: 100%; border-style: none; outline-style: none;" @play="play"
-                    @pause="pause" id = 'audio'></audio>
+                    @pause="pause" id='audio'></audio>
             </div>
         </div>
         <!--  -->
         <div class='mvfield' v-if="flagMv" @click='hideMv'>
-            <video controls="controls" :src="mvUrl" autoplay="autoplay"></video>
+            <div class='capa'>
+                <video controls="controls" :src="mvUrl" autoplay="autoplay"></video>
+            </div>
         </div>
     </div>
 

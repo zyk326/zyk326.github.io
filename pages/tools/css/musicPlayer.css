@@ -278,7 +278,14 @@ body{
     justify-content: center;
     align-items: center;
 }
-.mvfield video{
+.capa{
+     width: 90%;
+     height: 30%;
+}
+.capa video{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;   
 }
 /* 动画函数 */
 @-webkit-keyframes tire{
