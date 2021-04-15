@@ -22,7 +22,7 @@
                 </span>
             </div>
             <div class='main'>
-                <div class="songLi">
+                <div class="songLi" :class="flagsongLis?'flagsongLi':''">
                     <ul class='ul'>
                         <li v-for="(value,key) in getinfoli">
                             <span class='songfiled' @mouseover="overTitle(key)">
@@ -35,14 +35,15 @@
                     </ul>
                 </div>
 
-                <div class="field">
+                <div class="field" :class="flagwords?'flagword':''">
                     <span class='fieldsong' :style="isstyle">
                         <img :src="picture" alt="" class='tireimg' :class="isplay?'whetherplaying':''">
                     </span>
                 </div>
 
-                <div class="hotComments">
-                    <p style="font-size: 20px ;position: relative; left: 30%; top: 5px; width: 100px;color: #333333;">
+                <div class="hotComments" :class="flagcomments?'flagcomment':''">
+                    <p class='hotWord'
+                        style="">
                         热门留言
                     </p>
                     <ul class='commentPlace'>
@@ -54,6 +55,12 @@
                             </span>
                         </li>
                     </ul>
+                </div>
+
+                <div class='links'>
+                    <img src="../img/music-solid.png" alt="" @click='songLis'>
+                    <img src="../img/歌词.png" alt="" @click='words'>
+                    <img src="../img/comment.png" alt="" @click='comments'>
                 </div>
             </div>
             <div class='progressBar'>

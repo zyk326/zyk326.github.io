@@ -23,6 +23,10 @@ let musicPlayer = new Vue({
         isplay: false,
         mvUrl: '',
         flagMv: false,
+        //  各板块显示
+        flagsongLis: false,
+        flagwords: true,
+        flagcomments: true,
     },
     methods: {
         searchinfo: function () {
@@ -86,6 +90,21 @@ let musicPlayer = new Vue({
         },
         hideMv: function () {
             this.flagMv = false;
+        },
+        songLis: function () {
+            this.flagsongLis = false;
+            this.flagwords = true;
+            this.flagcomments = true;
+        },
+        words: function () {
+            this.flagsongLis = true;
+            this.flagwords = false;
+            this.flagcomments = true;
+        },
+        comments: function () {
+            this.flagsongLis = true;
+            this.flagwords = true;
+            this.flagcomments = false;
         }
     }
 })
