@@ -290,10 +290,10 @@ body{
     }
 }
 /* 网页适应 */
-@media screen and (max-width:960px){
+@media screen and (max-width:670px){
     .content{
-        width: 450px;
-        height: 800px;
+        width: 400px;
+        height: 700px;
     }
     .header{
         display: flex;
