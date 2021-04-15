@@ -292,8 +292,8 @@ body{
 /* 网页适应 */
 @media screen and (max-width:670px){
     .content{
-        width: 400px;
-        height: 700px;
+        width: 370px;
+        height: 650px;
     }
     .header{
         display: flex;
