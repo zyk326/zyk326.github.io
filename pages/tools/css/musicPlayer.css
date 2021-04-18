@@ -3,43 +3,46 @@
     padding: 0;
 }
 body{
-    background:url(../img/cityAndSea.jpg);
+    background: url(../img/cityAndSea.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+}
+.musicPlayer, .content::before{
+    background: inherit;
 }
 .musicPlayer{
     position:relative;
     width: 100%;
     height: 100vh;
-    /* background: hsla(0, 0%, 100%, .3); */
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.musicPlayer::before{
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    filter: blur(20px);
-}
 .content{
+    background: inherit;
     position: absolute;
     width: 850px;
     height: 550px;
-    /* border: 1px solid red; */
     box-shadow:0 0 9px 3px rgba(0, 0, 0, 0.199);
-    /* display: flex; */
+    overflow: hidden;
+    
+}
+.content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(5px);
+    margin: -30px;
 }
 .header{
     position: relative;
     width: 100%;
     height: 10.5%;
-    background-color: #5292fe;
+    background-color: #5291fe;
 }
 .header .logo{
     position: relative;
@@ -79,8 +82,6 @@ body{
     position: relative;
     width: 100%;
     height: 79%;
-    /* margin: 0 0 0px 0; */
-    /* border: 1px solid green; */
     display: flex;
 }
 .songLi{
@@ -211,9 +212,8 @@ body{
     height: 70%;    
     border-radius: 50%;
     overflow: hidden;
-    
-}
 
+}
 .tireimg{
     position: absolute;
     width: 100%;

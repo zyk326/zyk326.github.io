@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .first {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50vh;
+            border: 2px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(./img/t01053296492a20518e.jpg);
+        }
+
+
+        .twice {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            border: 2px solid green;
+            background: hsla(0, 0%, 100%, .3);
+
+        }
+
+        .twice::before {
+            background: url(./img/t01053296492a20518e.jpg);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class='first'>
+        <div class='twice'>
+        </div>
+    </div>
+</body>
+
+</html>
